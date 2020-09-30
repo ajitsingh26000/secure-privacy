@@ -13,7 +13,7 @@ import {NotificationService} from 'src/app/service/notification.service';
 export class BannerComponent {
   banner$: Observable<Banner> = this.notificationS.getBanner();
   bannerShow = true;
-  constructor(private notificationS: NotificationService) {}
+  constructor(public notificationS: NotificationService) {}
 
   closeBanner(): void {
     this.bannerShow = false;

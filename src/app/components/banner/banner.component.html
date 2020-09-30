@@ -9,5 +9,13 @@
   ></app-category>
 </div>
 <ng-template #loader>
-  <app-loader></app-loader>
+  <div
+    class="categories"
+    *ngIf="notificationS.loadingError$ | async; else loading"
+  >
+    An error occured while loading. Please try again later.
+  </div>
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
 </ng-template>
