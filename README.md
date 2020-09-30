@@ -8,6 +8,8 @@ Why I made a few choices.
 
 - Error handling could be done more generic but this application had only one api call so did not make error handling more generic.
 
+- semantic html- Not enough info that if it is user facing app that needs seo if it needs seo than only symantic versioning will help.
+
 ## SecurePrivacy
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
