@@ -1,0 +1,13 @@
+<app-banner-top
+  (closeBanner)="closeBanner()"
+  *ngIf="bannerShow"
+></app-banner-top>
+<div class="categories" *ngIf="banner$ | async as banner; else loader">
+  <app-category
+    *ngFor="let accordian of banner.accordian"
+    [accordian]="accordian"
+  ></app-category>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

@@ -1,0 +1,32 @@
+<div [class.pad-bot-15]="show" class="flex justify-between align-center">
+  <h2 class="accordian-title f600">
+    {{ accordian.CategoyHeading }}
+  </h2>
+  <button
+    [class.invert]="show"
+    class="btn pointer"
+    (click)="show = !show"
+  ></button>
+</div>
+<ng-container *ngIf="show">
+  <hr />
+  <p>{{ accordian.CategoyText }}</p>
+  <div class="f600 flex plugin-title">
+    <div class="w33">Plugins</div>
+    <div class="w33">Block/Enable</div>
+  </div>
+  <div class="flex plugin" *ngFor="let plugin of accordian.PluginList">
+    <div class="w33">{{ plugin.ComplianceType }}</div>
+    <div class="w33">
+      <label class="switch">
+        <input [checked]="plugin.BlockingEnabled" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="w33">
+      <a target="_blank" rel="noopener" [href]="plugin.PluginDomain"
+        >Go to Site
+      </a >
+    </div>
+  </div>
+</ng-container>
