@@ -1,13 +1,25 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {BannerTopComponent} from './components/banner-top/banner-top.component';
+import {BannerComponent} from './components/banner/banner.component';
+import {CategoryComponent} from './components/category/category.component';
+import {LoaderComponent} from './components/loader/loader.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+    await TestBed
+        .configureTestingModule({
+          declarations: [
+            AppComponent,
+            CategoryComponent,
+            BannerComponent,
+            BannerTopComponent,
+            LoaderComponent,
+          ],
+          imports: [HttpClientTestingModule],
+        })
+        .compileComponents();
   });
 
   it('should create the app', () => {
@@ -20,12 +32,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('secure-privacy');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('secure-privacy app is running!');
   });
 });

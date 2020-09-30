@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display store cookies question', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('secure-privacy app is running!');
+    expect(page.getTitleText()).toEqual('Can we store cookies?');
   });
 
   afterEach(async () => {
