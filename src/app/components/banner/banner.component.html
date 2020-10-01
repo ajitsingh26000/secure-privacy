@@ -7,6 +7,7 @@
     *ngFor="let accordian of banner.accordian"
     [accordian]="accordian"
   ></app-category>
+  <div *ngIf="!banner.accordian.length">No setting available.</div>
 </div>
 <ng-template #loader>
   <div
